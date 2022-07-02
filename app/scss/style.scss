@@ -37,6 +37,20 @@
     color: rgba(54, 56, 56, 0.9033);
     line-height: 22px;
   }
+  &__list-link--active {
+    padding-bottom: 4px;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background-color: rgba($title, 0.7);
+      border-radius: 1px;
+    }
+  }
 }
 
 .footer {
@@ -230,6 +244,31 @@
   &__img {
     max-width: 485px;
   }
+}
+
+.breadcrumbs {
+  padding: 13px 14px;
+  background: rgba(#dfdfdf, 0.5);
+  &__list {
+    display: flex;
+  }
+
+  &__item::after {
+    content: "/";
+    margin-left: 0px;
+    margin-right: 3px;
+  }
+  &__item:last-child::after {
+    display: none;
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 28px;
+    color: $default;
+  }
+}
+.container {
 }
 
 .top {
@@ -606,5 +645,77 @@
     color: $title;
     font-size: 24px;
     line-height: 38px;
+  }
+}
+
+.about {
+  &__prev {
+    background: url("../images/about-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    text-align: center;
+    padding: 160px 0px;
+    margin-top: -53px;
+  }
+
+  &__prev-title {
+    font-size: 60px;
+    line-height: 80px;
+    @extend %title-font;
+    color: $title;
+  }
+
+  &__content {
+    padding: 130px 0 40px;
+  }
+
+  &__content-title {
+    @extend %title-font;
+    color: $title;
+    font-size: 36px;
+    line-height: 60px;
+    width: 822px;
+    position: relative;
+    margin-bottom: 22px;
+    padding-bottom: 22px;
+    &::after {
+      position: absolute;
+      content: "";
+      height: 2px;
+      width: 200px;
+      left: 0;
+      background: #6d7278;
+      border: 1px solid #979797;
+
+      bottom: 0;
+    }
+  }
+
+  &__content-text {
+    margin-left: 285px;
+    font-size: 16px;
+    line-height: 27px;
+
+    p {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__popup {
+    background: url("../images/popup-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    min-height: 414px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__popup-play {
+  }
+
+  &__popup-imgbtn {
   }
 }
