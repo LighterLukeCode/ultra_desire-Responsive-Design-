@@ -25,6 +25,24 @@ body {
   flex: 0 0 auto;
 }
 
+.info-email {
+  font-weight: 600;
+  font-size: 14px;
+  color: $title;
+  margin-bottom: 22px;
+  padding-left: 30px;
+  display: inline-block;
+  position: relative;
+  &::before {
+    content: "";
+    background: url(../images/email.svg);
+    left: 0;
+    width: 16px;
+    height: 12px;
+    position: absolute;
+    top: 8px;
+  }
+}
 .container {
   max-width: 1140px;
   margin: 0 auto;
